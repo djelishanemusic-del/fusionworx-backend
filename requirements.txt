@@ -1,5 +1,5 @@
 runpod
-torch
-torchaudio
+torch==2.8.0
+torchaudio==2.8.0
 transformers
 scipy
