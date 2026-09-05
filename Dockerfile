@@ -2,9 +2,14 @@ FROM runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404
 
 WORKDIR /workspace
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir --ignore-installed -r requirements.txt
+RUN apt-get update && apt-get install -y git
 
-COPY handler.py .
+RUN git clone https://github.com/ACE-Step/ACE-Step-1.5.git /workspace/ACE-Step-1.5
 
-CMD ["python3", "-u", "handler.py"]
+WORKDIR /workspace/ACE-Step-1.5
+
+RUN pip install --no-cache-dir --ignore-installed -e .
+
+EXPOSE 8001
+
+CMD ["python3", "acestep/api_server.py", "--port", "8001", "--server-name", "0.0.0.0"]
