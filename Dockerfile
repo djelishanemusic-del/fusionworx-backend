@@ -9,7 +9,7 @@ RUN git clone https://github.com/ACE-Step/ACE-Step-1.5.git /workspace/ACE-Step-1
 WORKDIR /workspace/ACE-Step-1.5
 
 RUN pip install --no-cache-dir --ignore-installed -e acestep/third_parts/nano-vllm
-RUN pip install --no-cache-dir --ignore-installed -e .
+RUN pip install --no-cache-dir -e .
 
 EXPOSE 8001
 
