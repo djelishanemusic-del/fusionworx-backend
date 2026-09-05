@@ -9,7 +9,7 @@ RUN git clone https://github.com/ACE-Step/ACE-Step-1.5.git /workspace/ACE-Step-1
 WORKDIR /workspace/ACE-Step-1.5
 
 RUN pip install --no-cache-dir --ignore-installed -e acestep/third_parts/nano-vllm
-RUN pip install --no-cache-dir torch==2.10.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cu128
+RUN pip install --no-cache-dir torch==2.10.0 torchaudio==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cu128
 RUN pip install --no-cache-dir -e .
 
 EXPOSE 8001
