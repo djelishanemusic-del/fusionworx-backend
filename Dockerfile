@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -e .
 
 EXPOSE 8001
 
-CMD ["python3", "acestep/api_server.py", "--port", "8001", "--server-name", "0.0.0.0"]
+CMD ["python3", "acestep/api_server.py", "--port", "8001", "--host", "0.0.0.0"]
